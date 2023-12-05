@@ -1,13 +1,15 @@
-import { Nav } from './components/Nav';
-
+import { NavBar } from './components/NavBar';
+import { SideBar } from './components/SideBar';
+import { Modal } from './components/Modal';
 function App() {
   return (
-    <>
-      <Nav></Nav>
-      <h1 className="text-3xl font-bold underline text-red-700">
-        Hello world!
-      </h1>
-    </>
+    <div className="bg-violet-50 h-screen w-screem flex">
+      <SideBar />
+      <div className="w-5/6 flex flex-col">
+        <NavBar />
+        <Modal />
+      </div>
+    </div>
   );
 }
 
