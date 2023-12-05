@@ -8,16 +8,20 @@ export const SideBar = () => {
         <h1 className="text-purple-950 font-semibold text-3xl">TASKBAN</h1>
       </div>
       <div>
-        <ul className="flex flex-col text-stone-500 font-medium gap-6">
-          <li className="flex gap-4 ">
+        <ul className="flex flex-col text-stone-500 font-medium gap-6 mt-10 mr-5  ">
+          <li className="flex gap-4 items-center active:text-purple-950 cursor-pointer ">
             <BiSolidDashboard />
             Quadro
           </li>
-          <li className="flex gap-4  ">
-            <BsListUl /> <span>Lista</span>
+          <li className="flex gap-4 items-center active:text-purple-950 cursor-pointer">
+            <BsCalendar2Event />
+            <span>Lista</span>
           </li>
-          <li className="flex gap-4">Timeline</li>
-          <li className="flex gap-4">
+          <li className="flex gap-4 items-center active:text-purple-950 cursor-pointer">
+            <BsListUl />
+            Timeline
+          </li>
+          <li className="flex gap-4 items-center active:text-purple-950 cursor-pointer">
             <BsCalendar2Event />
             Calendário
           </li>

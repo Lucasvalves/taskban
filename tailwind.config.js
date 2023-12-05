@@ -7,6 +7,12 @@ export default {
     },
     colors: {
       white: '#ffffff',
+      black:{
+        20:'rgba(34, 33, 33, 0.200)'
+      },
+      gray:{
+        200: '#C4C4C4'
+      },
       stone: {
         500: '#6F6F6F',
       },
@@ -16,6 +22,9 @@ export default {
       violet: {
         50: '#F1F0FF',
         150: '#BFB9FF',
+      },
+      red: {
+        400: '#FF7979',
       },
       orange: {
         30: '#f97316',
