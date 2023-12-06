@@ -8,7 +8,7 @@ export default {
     colors: {
       white: '#ffffff',
       black:{
-        20:'rgba(34, 33, 33, 0.200)'
+        200:'rgba(34, 33, 33, 0.200)'
       },
       gray:{
         200: '#C4C4C4'
@@ -27,8 +27,12 @@ export default {
         400: '#FF7979',
       },
       orange: {
-        30: '#f97316',
+				100: '#FFBA53',
+        300: '#f97316',
       },
+      green:{
+       400: '#2BA700'
+      }
     },
     extend: {},
   },
