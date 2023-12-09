@@ -1,3 +1,4 @@
-export const Button = ({ text, className, onClick}) => {
-  return <button className={`rounded-xl ${className}`} onClick={onClick}>{text}</button>
+const Button = ({ type, text, className, onClick}) => {
+  return <button type={type} className={`rounded-xl ${className}`} onClick={onClick}>{text}</button>
 }
+export default Button

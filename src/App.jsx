@@ -3,16 +3,10 @@ import { SideBar } from './components/SideBar';
 import { Modal } from './components/Modal';
 import AppProvider from './context/AppProvider';
 import useAppContext from '../src/hook/useAppContext';
+import PickData from './PickData/PickData';
 
 function App() {
   const { openModal, setOpenModal } = useAppContext();
-  // if(openModal){
-  //   return (
-  //     <div className="bg-orange-30 h-screen w-screem flex">
-
-  //     </div>
-  //   )
-  // }
     return (
       <AppProvider>
         <div className="bg-violet-50 h-screen w-screem flex">
@@ -21,6 +15,7 @@ function App() {
             <NavBar />
             <Modal />
           </div>
+    
         </div>
       </AppProvider>
     );
