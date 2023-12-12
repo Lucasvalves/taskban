@@ -1,20 +1,23 @@
 import useAppContext from '../../hook/useAppContext'
 import Form from '../Form'
 export const Modal = () => {
-  const { openModal, setOpenModal } = useAppContext()
+  const { isModalVisible , setIsModalVisible  } = useAppContext()
 
-  if (openModal == true) {
+  const handleOutsideClick = (e) =>{
+    if(e.target.id === "modal")setIsModalVisible(false);   
+  }
+  if (isModalVisible ) {
     return (
-      <div className="bg-black-200 flex  h-full">
-        <div className="bg-white  h-4/6 rounded-md m-auto w-3/6">
-          <div className=" h-5/6 flex  m-5 w-6/6 flex-col">
-            <h1 className="text-purple-950 font-semibold text-base mb-3">Novo Card</h1>
+      <div id="modal" className="bg-black-200 z-20 flex items-center justify-center absolute w-full left-0 top-0 h-screen" onClick={handleOutsideClick}>
+        <div className="bg-white  rounded-md m-auto h-12/12 w-5/12 ">
+          <div className=" h-5/6 flex my-5  w-6/6 flex-col m-8">
+            <h1 className="text-purple-950 font-semibold text-xl mb-3">Novo Card</h1>
             <div>
               <Form/>
             </div>
           </div>
-        </div>
+          </div>
       </div>
     )
-  }
+    }
 }

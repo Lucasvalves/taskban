@@ -5,18 +5,24 @@ import AppProvider from './context/AppProvider';
 import useAppContext from '../src/hook/useAppContext';
 import PickData from './PickData/PickData';
 
+
 function App() {
-  const { openModal, setOpenModal } = useAppContext();
+  const { setIsModalVisible  } = useAppContext();
+
     return (
       <AppProvider>
-        <div className="bg-violet-50 h-screen w-screem flex">
-          <SideBar />
-          <div className="w-5/6 flex flex-col">
-            <NavBar />
-            <Modal />
+           <div className="bg-violet-50 h-screen w-screem flex">
+      {/* <div className="bg-black-200 z-10 flex absolute w-full h-screen"> */}
+
+            <div className="w-5/6 flex flex-col">
+            <SideBar />
+
+              <NavBar />           
+              <Modal />                
           </div>
-    
-        </div>
+          </div>
+          
+
       </AppProvider>
     );
   

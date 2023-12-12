@@ -5,12 +5,13 @@ const TextField = ({ label, placeholder, icon, className,...restProps }) => {
 
 
   return (
-    <>
-      {/* <label className="relative  top-[8px] left-1.5 text-gray-200 pointer-events-none bg-white text-xs z-40 w-1/5">{label}</label> */}
-      <label className="relative top-1.5 left-1.5 pointer-events-none text-gray-200 bg-white w-1/6 text-xs z-40 whitespace-nowrap border border-green-400 ">{label}</label> 
+    <div className="flex flex-col">
+      <label className="relative top-1.5 left-1.5 pointer-events-none text-gray-200 bg-white text-xs z-40 whitespace-nowrap  w-fit flex flex-col ">{label}</label> 
+      <div className="relative flex items-center ">
         <input  className={className} placeholder={placeholder} onFocus={handleFocus} type="text" {...restProps} maxLength={255} />
-        {icon && <span className="absolute top-2/4 right-2.5" >{icon}</span>}
-    </>
+        {icon && <div className="absolute right-1.5 bottom-4 translate-y-2/4 " >{icon}</div>}
+      </div>
+    </div>
   );
 };
 

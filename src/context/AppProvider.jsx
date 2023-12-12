@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { AppContext } from './AppContext';
 
 export default function AppProvider({ children }) {
-  const [openModal, setOpenModal] = useState(false);
+  const [isModalVisible, setIsModalVisible ] = useState(false);
 
   return (
-    <AppContext.Provider value={{ openModal, setOpenModal }}>
+    <AppContext.Provider value={{ isModalVisible , setIsModalVisible  }}>
       {children}
     </AppContext.Provider>
   );

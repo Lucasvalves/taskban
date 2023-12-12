@@ -3,7 +3,7 @@ import { BiSolidDashboard } from 'react-icons/bi';
 
 export const SideBar = () => {
   return (
-    <nav className="bg-white	w-1/6 h-screen flex items-center flex-col">
+    <nav className="bg-white	w-3/12 h-screen flex items-center flex-col z-10">
       <div className="	w-full h-24 flex justify-center items-end">
         <h1 className="text-purple-950 font-semibold text-3xl">TASKBAN</h1>
       </div>

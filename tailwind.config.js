@@ -8,7 +8,7 @@ export default {
     colors: {
       white: '#ffffff',
       black:{
-        200:'rgba(34, 33, 33, 0.200)'
+        200:'rgba(0, 0, 0, 0.8)'
       },
       gray:{
         200: '#C4C4C4'
