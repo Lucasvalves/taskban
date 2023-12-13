@@ -22,7 +22,7 @@ export const TaskCard = ({taskName}) =>{
               <h1 className="text-stone-500 font-semibold text-base mb-3 ml-4 mt-4 ">Testar Navegadores</h1>
               <p className="text-stone-500 text-xs m-4 h-fit  text-justify ">
                 Verificar e garantir a compatibilidade da
-                aplicação em diferentes navegadores.
+                aplicação em diferentes navegadoresss.
               </p>
               <div className=" flex flex-row mx-4 mb-4">
                 <span className="w-2/4  flex items-center flex-row text-stone-500 ">
