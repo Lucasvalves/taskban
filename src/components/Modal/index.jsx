@@ -16,8 +16,8 @@ export const Modal = () => {
               <Form/>
             </div>
           </div>
-          </div>
+        </div>
       </div>
     )
-    }
+  }
 }

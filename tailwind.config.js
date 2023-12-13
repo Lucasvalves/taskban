@@ -5,6 +5,12 @@ export default {
     fontFamily: {
       sans: ['Libre Franklin', 'sans-serif'],
     },
+    extend: {
+      dropShadow: {
+        'sm': '0px 10px 10px 0px rgba(0, 0, 0, 0.05);',
+        'md ': '0px 4px 10px 0px rgba(0, 0, 0, 0.10)',
+      }
+    },
     colors: {
       white: '#ffffff',
       black:{
@@ -12,6 +18,7 @@ export default {
       },
       gray:{
         200: '#C4C4C4'
+        
       },
       stone: {
         500: '#6F6F6F',
@@ -21,6 +28,7 @@ export default {
       },
       violet: {
         50: '#F1F0FF',
+        100: '#F2F2F2',
         150: '#BFB9FF',
       },
       red: {

@@ -6,9 +6,10 @@ import PickData from '../../PickData/PickData'
 import TextField from '../TextField'
 import TextArea  from '../TextArea'
 import { useState } from 'react'
+import { InputRadio } from '../InputRadio'
 
 const Form = () => {
-	const { isModalVisible , setIsModalVisible } = useAppContext()
+	const { setIsModalVisible,setOpenToDo } = useAppContext()
 	const {register, handleSubmit} = useForm()
 	
 	const handleSubmitData = (data) =>{
@@ -22,9 +23,14 @@ const Form = () => {
 	const handleRadioChange = (event) =>{
 		setSelectedOption(event.target.value)
 	}
-	
+	const handleOpenToDoChange = () => {
+		setIsModalVisible(false)
+		setOpenToDo(true)
+	}
+	// onSubmit={handleSubmit(handleSubmitData)}
+
 	return (
-		<form onSubmit={handleSubmit(handleSubmitData)} className='w-12/12'>
+		<form  className='w-12/12'>
 			<div className="flex flex-col" >
 				<div className="flex flex-col mb-5  h-10">
 					<TextField
@@ -59,16 +65,9 @@ const Form = () => {
 					<span className="w-2/4 mb-5" >
 						<label className="text-xs text-gray-200 w-4/5 ml-2">Priority</label>  
 					 	<span className="flex gap-3 justify-end ">
-						 <label className=" bg-red-400 text-white text-xs p-0.5 px-3 rounded-xl">
-						 <input type="radio" value="high" checked={selectedOption === 'high'}
-         						 onChange={handleRadioChange} className="hidden" />
-							HIGH</label>
-						 <label className="border border-orange-100  text-orange-100 bg-white text-xs p-0.5 px-3 rounded-xl">
-						 <input type="radio" value="medium" checked={selectedOption === 'medium'} onChange={handleRadioChange} className="hidden"/>
-							MEDIUM</label>
-						 <label className="border border-green-400 text-green-400 bg-white text-xs p-0.5 px-3 rounded-xl">
-						 <input type="radio" value="low" checked={selectedOption === 'low'} onChange={handleRadioChange} className="hidden"/>
-							LOW</label>
+							<InputRadio onChange={handleRadioChange} selectedOption="selectedOption" value="high" className=" bg-red-400 text-white text-xs p-0.5 px-3 rounded-xl cursor-pointer"/>
+							<InputRadio onChange={handleRadioChange} selectedOption="selectedOption" value="medium" className="border border-orange-100  text-orange-100 bg-white text-xs p-0.5 px-3 rounded-xl cursor-pointer"/>
+							<InputRadio onChange={handleRadioChange} selectedOption="selectedOption" value="low" className="border border-green-400 text-green-400 bg-white text-xs p-0.5 px-3 rounded-xl cursor-pointer"/>
 						</span>
 					</span> 
 				</div>
@@ -83,9 +82,9 @@ const Form = () => {
 				type="submit"
 					text="CRIAR"
 					className="bg-purple-950 text-white border text-xs w-1/4 p-1"
+					onClick={(handleOpenToDoChange)}
 				/>
 			</div>
-
 		</form>
 	)
 }
