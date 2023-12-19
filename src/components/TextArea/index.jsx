@@ -1,4 +1,8 @@
-export const TextArea =({ label, placeholder, className,...restProps }) =>{
+
+
+export const TextArea =({register, label, placeholder, className,...restProps }) =>{
+
+  
   return(
     <>
       <label className="relative top-1.5 left-1.5 pointer-events-none text-gray-200 bg-white w-fit text-xs z-40 ">{label}</label>
@@ -7,6 +11,7 @@ export const TextArea =({ label, placeholder, className,...restProps }) =>{
           name="content"
           placeholder={placeholder}
           className={className}
+          {...register}
       />
     </>
   )

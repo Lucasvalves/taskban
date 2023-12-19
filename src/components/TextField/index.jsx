@@ -1,4 +1,6 @@
-const TextField = ({ label, placeholder, icon, className, ...restProps }) => {
+import { useForm } from 'react-hook-form';
+
+const TextField = ({ label, register, placeholder, icon, className }) => {
   const handleFocus = (event) => {
     if (placeholder === 'Selecione a data de entrega')
       event.target.type = 'date';
@@ -15,7 +17,7 @@ const TextField = ({ label, placeholder, icon, className, ...restProps }) => {
           placeholder={placeholder}
           onFocus={handleFocus}
           type="text"
-          {...restProps}
+          {...register}
           maxLength={255}
         />
         {icon && (

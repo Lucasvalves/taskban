@@ -1,75 +1,40 @@
-import useAppContext from '../../hook/useAppContext';
-import { DragDropContext, Droppable } from '@hello-pangea/dnd';
-import { Task } from '../Task';
-import { useState } from 'react';
+import { MdOutlineWatchLater } from 'react-icons/md';
+import { Draggable } from '@hello-pangea/dnd';
 
-export const TaskCard = ({ taskName }) => {
-  const { openToDo } = useAppContext();
-
-  const [tasks, setTasks] = useState([
-    {
-      id: '0',
-      title: 'Testar Navegadores',
-      description:
-        'Verificar e garantir a compatibilidade da aplicação em diferentes navegadoresss.',
-      date: '28/12/23',
-      priority: 'LOW',
-    },
-    {
-      id: '1',
-      title: 'Lavar Roupa',
-      description: 'Verificar se as roupas estão separadas de forma correta.',
-      date: '21/12/23',
-      priority: 'HIGH',
-    },
-    {
-      id: '2',
-      title: 'Churrasco',
-      description: 'Verificar se já tem tudo comprado.',
-      date: '29/12/23',
-      priority: 'MIDUM',
-    },
-  ]);
-  const reorder = (list, startIndex, endIndex) => {
-    const result = Array.from(list);
-    const [removed] = result.splice(startIndex, 1);
-    result.splice(endIndex, 0, removed);
-    return result;
-  };
-
-  const onDragEnd = (result) => {
-    if (!result.destination) {
-      result;
-    }
-
-    const items = reorder(tasks, result.source.index, result.destination.index);
-    setTasks(items);
-
-  };
-
-  if (openToDo) {
-    return (
-      <div className="bg-violet-100 rounded-md h-fit  drop-shadow-md">
-        <h1 className="text-stone-500 font-semibold text-xs mb-3 ml-3 mt-2">
-          {taskName} ({tasks.length})
-        </h1>
-        <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="tasks" type="list" direction="vertical">
-            {(provided) => (
-              <div
-                className="h-5/6 flex my-5 flex-col gap-3 items-center mx-3 w-5/5 "
-                ref={provided.innerRef}
-                {...provided.droppableProps}
+export const TaskCard = ({ task, index }) => {
+  return (
+    <Draggable draggableId={task.id} index={index}>
+      {(provided) => (
+        <div
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef}
+          className=" bg-white h-1/6  rounded-md drop-shadow-md w-full"
+        >
+          <h1 className="text-stone-500 font-semibold text-base mb-3 ml-4 mt-4  ">
+            {task.title}
+          </h1>
+          <p className="text-stone-500 text-xs m-4 h-fit text-justify ">
+            {task.description}
+          </p>
+          <div className=" flex flex-row mx-4 mb-4">
+            <span className="w-2/4  flex items-center flex-row text-stone-500 ">
+              <MdOutlineWatchLater className="h-fit w-6 " />
+              <span className=" text-stone-500 text-[0.70rem] ml-1 font-semibold whitespace-nowrap">
+                {task.date}
+              </span>
+            </span>
+            <span className="w-2/4 h-6 flex justify-end ">
+              <span
+                className="border border-green-400 text-green-400 bg-white
+      py-1 px-2.5 rounded-xl text-justify text-[0.70rem]"
               >
-                {tasks.map((task, index) => (
-                  <Task key={task.id} task={task} index={index} />
-                ))}
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-        </DragDropContext>
-      </div>
-    );
-  }
+                {task.priority}
+              </span>
+            </span>
+          </div>
+        </div>
+      )}
+    </Draggable>
+  );
 };

@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { AppContext } from '../context/AppContext';
+import { ModalContext } from '../context/ModalContext';
 
-export default function useAppContext() {
-  const context = useContext(AppContext);
+export default function useModalContext() {
+  const context = useContext(ModalContext);
 
   if (context === undefined) {
     throw new Error('Não está dentro do contexto');
