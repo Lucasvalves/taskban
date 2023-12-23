@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+<<<<<<< HEAD
   input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     color: #48409E;
@@ -41,4 +42,10 @@
     border: 0 none;
     outline: 0;
   } */
+=======
+  input[type="date"]::-webkit-calendar-picker-indicator{
+    display: none;
+    color: #48409E;
+  }
+>>>>>>> feab60f55a1bbc719f5145259c6746fd228422ab
 }

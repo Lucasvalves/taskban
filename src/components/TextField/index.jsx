@@ -1,6 +1,10 @@
 import { useForm } from 'react-hook-form';
 
+<<<<<<< HEAD
 const TextField = ({ label, register, placeholder, icon,error, className,...otherProps}) => {
+=======
+const TextField = ({ label, register, placeholder, icon, className }) => {
+>>>>>>> feab60f55a1bbc719f5145259c6746fd228422ab
   const handleFocus = (event) => {
     if (placeholder === 'Selecione a data de entrega')
       event.target.type = 'date';
@@ -13,7 +17,11 @@ const TextField = ({ label, register, placeholder, icon,error, className,...othe
       </label>
       <div className="relative flex items-center ">
         <input
+<<<<<<< HEAD
           className={[className, error]}
+=======
+          className={className}
+>>>>>>> feab60f55a1bbc719f5145259c6746fd228422ab
           placeholder={placeholder}
           onFocus={handleFocus}
           type="text"
