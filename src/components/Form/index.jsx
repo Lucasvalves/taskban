@@ -48,7 +48,9 @@ const Form = () => {
             className="border border-gray-20 rounded  text-sm p-1.5 w-full focus:border-neutral-400 focus:outline-none"
             placeholder="Digite aqui o título da task"
           />
-          {/* {errors.title && <p>{errors.title.message}</p>} */}
+          {!!errors.title && (
+            <p className="text-[11px] text-red-400">insira o titulo</p>
+          )}
         </div>
         <TextArea
           error={!!errors.description}
@@ -57,6 +59,9 @@ const Form = () => {
           label="Descrição"
           className="mb-3 border border-gray-200 resize-none rounded w-full text-sm focus:border-neutral-400 focus:outline-none"
         />
+        {!!errors.description && (
+          <p className="text-[11px] text-red-400">insira a descrição</p>
+        )}
         <div className="mb-6  flex flex-col   sm:gap-20 lg:gap-0 xl:gap-16 sm:flex-row gap-4">
           <span className="flex flex-col w-4/4 sm:w-2/4">
             <TextField
@@ -69,7 +74,9 @@ const Form = () => {
               className="border border-gray-200 rounded text-sm p-1.5  w-full box-border cursor-pointer
 							focus:border-neutral-400 focus:outline-none focus:ring-[#C4C4C4]"
             />
-            {/* <input type="date" register={register('date')}/> */}
+            {!!errors.date && (
+              <p className="text-[11px] text-red-400">insira a data</p>
+            )}
           </span>
 
           <span className="w-4/4 sm:w-2/4  ">
