@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    color: #48409E;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #48409E;
+  }
+
+  *::-webkit-scrollbar {
+    width: 7px;
+    height: 5px;
+    transition: 0.3s;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #48409E;
+    border-radius: 10px;
+
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #C4C4C4;
+    border-radius: 10px;
+  }
+
+  .height {
+    height: calc(100% - 80px);
+  }
+
+  /* textarea:focus,
+  input:focus,
+  select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+  } */
+}
