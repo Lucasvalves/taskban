@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export const TextArea = ({
   register,
   label,
@@ -23,25 +22,3 @@ export const TextArea = ({
 };
 
 export default TextArea;
-=======
-
-
-export const TextArea =({register, label, placeholder, className,...restProps }) =>{
-
-  
-  return(
-    <>
-      <label className="relative top-1.5 left-1.5 pointer-events-none text-gray-200 bg-white w-fit text-xs z-40 ">{label}</label>
-      <textarea
-          rows="3"
-          name="content"
-          placeholder={placeholder}
-          className={className}
-          {...register}
-      />
-    </>
-  )
-}
-
-export default TextArea
->>>>>>> feab60f55a1bbc719f5145259c6746fd228422ab

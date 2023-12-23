@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-import { useState } from 'react';
->>>>>>> feab60f55a1bbc719f5145259c6746fd228422ab
 import { TaskCard } from '../TaskCard';
 import { useContext } from 'react';
 import { TaskList } from '../TaskList';
@@ -18,7 +14,6 @@ export const TaskContainer = () => {
   const { openToDo } = useModalContext();
   const taskEntries = Array.from(Object.entries(cardsTitle));
 
-<<<<<<< HEAD
   // if (openToDo) {
   return (
     <div
@@ -45,29 +40,4 @@ export const TaskContainer = () => {
     </div>
   );
   // }
-=======
-  console.log('TaskContainer tasks: ', tasks);
-  if (openToDo) {
-    return (
-      <div
-        className="flex items-center mx-12 gap-6
-    6 w-full h-screen"
-      >
-        {tasks &&
-          taskEntries.map(([key, value]) => (
-            //taskEntries.map((key, value)=>(
-            <TaskList
-              className="flex-auto"
-              key={key}
-              title={`${value} (${tasks[key].length})`}
-            >
-              {/* {tasks.map((task, index) => (
-                  <TaskCard className="flex-auto" />
-                ))}   */}
-            </TaskList>
-          ))}
-      </div>
-    );
-  }
->>>>>>> feab60f55a1bbc719f5145259c6746fd228422ab
 };
