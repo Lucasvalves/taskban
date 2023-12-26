@@ -17,10 +17,9 @@ export const TaskContainer = () => {
   // if (openToDo) {
   return (
     <div
-      className="
-    6  h-full flex w-full justify-center overflow-y-scroll bg-green-400 "
+      className="6  h-full flex w-full justify-center overflow-y-scroll "
     >
-      <div className="flex  justify-center gap-6 bg-red-400   ">
+      <div className="flex  justify-center gap-">
         {tasks &&
           taskEntries.map(([key, value]) => (
             <TaskList key={key} title={`${value} (${tasks[key].length})`}>

@@ -1,36 +1,32 @@
 import { BsCalendar2Event, BsListUl } from 'react-icons/bs';
 import { BiSolidDashboard } from 'react-icons/bi';
-import { ItemSideBar } from '../ItemSideBar';
+import { ItemsNavegation } from '../ItemsNavegation';
 export const ListSideBar = () => {
   return (
-    <ul className="flex flex-col text-stone-500 font-medium gap-6 mt-10 m-5 ">
+    <ul className="flex flex-col text-stone-50 text- justify-center font-medium gap-6 mt-10 m-5  text-stone-500 ">
       <a
-        href=""
-        className="flex flex-row gap-4 items-center active:text-purple-950 "
+        className="flex flex-row items-center active:text-purple-950  "
       >
-        <BiSolidDashboard className="items-end" />
-        <ItemSideBar text="Quadro"></ItemSideBar>
+        <BiSolidDashboard size={25} className="items-end " />
+        <ItemsNavegation text="Quadro"/>
       </a>
       <a
-        href=""
-        className="flex flex-row gap-4 items-center active:text-purple-950 "
+        className="flex flex-row items-center active:text-purple-950 "
       >
-        <BsCalendar2Event className="items-end" />
-        <ItemSideBar text="Lista"></ItemSideBar>
+        <BsCalendar2Event size={25}  className="items-end" />
+        <ItemsNavegation text="Lista"/>
       </a>
       <a
-        href=""
-        className="flex flex-row gap-4 items-center active:text-purple-950 "
+        className="flex flex-row items-center active:text-purple-950 "
       >
-        <BsListUl className="items-end" />
-        <ItemSideBar text="Timeline"></ItemSideBar>
+        <BsListUl size={25}  className="items-end" />
+        <ItemsNavegation text="Timeline"/>
       </a>
       <a
-        href=""
-        className="flex flex-row gap-4 items-center active:text-purple-950 "
+        className="flex flex-row items-center active:text-purple-950 "
       >
-        <BsCalendar2Event className="items-end" />
-        <ItemSideBar text="Calendário"></ItemSideBar>
+        <BsCalendar2Event size={25}  className="items-end" />
+        <ItemsNavegation text="Calendário"/>
       </a>
     </ul>
   );

@@ -4,6 +4,7 @@ export default function AppProvider({ children }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [openToDo, setOpenToDo] = useState(true);
   const [isSubmit, setIsSubmit] = useState(false)
+  const [expanded, setExpanded] = useState(true)
 
 
   return (
@@ -15,6 +16,7 @@ export default function AppProvider({ children }) {
         setOpenToDo,
         isSubmit, 
         setIsSubmit,
+        expanded, setExpanded
       }}
     >
       {children}
