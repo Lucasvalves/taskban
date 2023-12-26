@@ -1,11 +1,12 @@
 import { createContext } from 'react';
-import { emptyTasks, initialTaksValues } from '../hook/useTasks';
+import { emptyTasks, initialTaksValues } from '../utils/functions';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { TasksContext } from './TasksContext';
 
 export default function TaskProvider({ children }) {
   const [tasks, setTasks] = useState(emptyTasks);
+  
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const storage = JSON.parse(localStorage.getItem('tasks') || 'null');

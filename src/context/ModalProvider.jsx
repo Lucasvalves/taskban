@@ -3,6 +3,8 @@ import { ModalContext } from './ModalContext';
 export default function AppProvider({ children }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [openToDo, setOpenToDo] = useState(true);
+  const [isSubmit, setIsSubmit] = useState(false)
+
 
   return (
     <ModalContext.Provider
@@ -11,6 +13,8 @@ export default function AppProvider({ children }) {
         setIsModalVisible,
         openToDo,
         setOpenToDo,
+        isSubmit, 
+        setIsSubmit,
       }}
     >
       {children}
