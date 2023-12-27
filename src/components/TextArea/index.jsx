@@ -7,7 +7,7 @@ export const TextArea = ({
 }) => {
   return (
     <>
-      <label className="relative top-1.5 left-1.5 pointer-events-none text-gray-200 bg-white w-fit text-xs z-40 ">
+      <label className="relative top-1.5 left-1.5 pointer-events-none text-gray-200 bg-white w-fit text-xs z-40  ">
         {label}
       </label>
       <textarea

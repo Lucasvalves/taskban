@@ -98,11 +98,19 @@ export const initialTaksValues = {
     },
   ],
 };
+
 export const emptyTasks = {
   todo: [],
   doing: [],
   qa: [],
   done: [],
+};
+
+export const cardsTitle = {
+  todo: 'To do',
+  doing: 'Doing',
+  qa: 'QA',
+  done: 'Done',
 };
 
 export const handlePriorityColor = (typePriority) => {

@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { emptyTasks, initialTaksValues } from '../utils/functions';
+import { emptyTasks, initialTaksValues } from '../utils/constants';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { TasksContext } from './TasksContext';

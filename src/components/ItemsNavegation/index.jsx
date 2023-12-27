@@ -1,8 +1,9 @@
 import useSidebarContext from '../../hook/useSidebarContext'
 
-export const ItemsNavegation = ({ icon, text, active, alert }) => {
-  //const { expanded } = useContext(SidebarContext)
+export const ItemsNavegation = ({text, active, alert }) => {
+
   const { expanded } = useSidebarContext()
+
   return (
     <li className={`flex gap-4 items-center active:text-purple-950 cursor-pointer 
         ${
@@ -39,5 +40,5 @@ export const ItemsNavegation = ({ icon, text, active, alert }) => {
       )}
     </li>
   );
-};
 
+};

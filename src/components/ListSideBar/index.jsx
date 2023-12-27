@@ -3,9 +3,9 @@ import { BiSolidDashboard } from 'react-icons/bi';
 import { ItemsNavegation } from '../ItemsNavegation';
 export const ListSideBar = () => {
   return (
-    <ul className="flex flex-col text-stone-50 text- justify-center font-medium gap-6 mt-10 m-5  text-stone-500 ">
+    <ul className="flex flex-col text-stone-50 text- justify-center font-medium gap-6 mt-5 m-5  text-stone-500 ">
       <a
-        className="flex flex-row items-center active:text-purple-950  "
+        className="flex flex-row items-center text-purple-950  "
       >
         <BiSolidDashboard size={25} className="items-end " />
         <ItemsNavegation text="Quadro"/>

@@ -11,8 +11,8 @@ export const SideBar = () => {
   return (
     <aside className='h-screen z-50 '>
       <nav className="h-full bg-white shadow-sm flex flex-col">
-        <div className="px-4 py-10 pb-2 flex justify-between items-center bg-red-400">
-          <h1 className={`text-purple-950  font-semibold text-xl sm:text-3xl overflow-hidden bg-neutral-400 flex transition-all ${
+        <div className="px-4 py-10 pb-2 flex justify-between items-center">
+          <h1 className={`text-purple-950  font-semibold text-xl sm:text-3xl overflow-hidden flex transition-all ${
               expanded ? "w-full" : "w-0"
             }`}>
             TASKBAN
@@ -21,22 +21,13 @@ export const SideBar = () => {
             {expanded ? <CgPushChevronLeft/> : <CgPushChevronRight/>  }
           </button>
         </div>
-        {/* <SidebarContext.Provider value={{ expanded }}>
-          <ul className="flex-1 px-3">{children}</ul>
-        </SidebarContext.Provider> */}
         <div>
           <ListSideBar />
         </div>
       </nav>
     </aside>
   );
+
+
 };
 
-        // <div className="	w-full h-24 flex justify-center items-end">
-        //   <h1 className="text-purple-950 font-semibold text-xl sm:text-3xl  ">
-        //     TASKBAN
-        //   </h1>
-        // </div>
-        // <div>
-        //   <ListSideBar />
-        // </div>

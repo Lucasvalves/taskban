@@ -5,6 +5,7 @@ import ModalProvider from './context/ModalProvider';
 import TaskProvider from './context/TaskProvider';
 import SidebarContext from './context/SidebarProvider';
 import { TaskContainer } from './components/TaskContainer';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
                 <Modal />
               </div>
             </div>
+            <Toaster position='top-right'/>
           </SidebarContext>
         </ModalProvider>
       </TaskProvider> 

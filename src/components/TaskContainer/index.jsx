@@ -3,18 +3,12 @@ import { useContext } from 'react';
 import { TaskList } from '../TaskList';
 import useModalContext from '../../hook/useModalContext';
 import { TasksContext } from '../../context/TasksContext';
-const cardsTitle = {
-  todo: 'To do',
-  doing: 'Doing',
-  qa: 'QA',
-  done: 'Done',
-};
+import {cardsTitle} from '../../utils/constants'
+
 export const TaskContainer = () => {
   const { tasks } = useContext(TasksContext);
-  const { openToDo } = useModalContext();
   const taskEntries = Array.from(Object.entries(cardsTitle));
 
-  // if (openToDo) {
   return (
     <div
       className="6  h-full flex w-full justify-center overflow-y-scroll "
@@ -38,5 +32,4 @@ export const TaskContainer = () => {
       </div>
     </div>
   );
-  // }
 };

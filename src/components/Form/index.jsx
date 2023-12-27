@@ -9,8 +9,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import PickData from '../icons/PickData/PickData';
-
-
+import toast from 'react-hot-toast';
 
 const schema = z.object({
   title: z.string().min(1),
@@ -21,7 +20,7 @@ const schema = z.object({
 
 const Form = () => {
   const { addTask  } = useTasks();
-  const { setIsModalVisible, setOpenToDo, setIsSubmit, isSubmit } = useModalContext();
+  const { setIsModalVisible, setIsSubmit, isSubmit } = useModalContext();
 
   const {
     register,
@@ -35,8 +34,10 @@ const Form = () => {
   const onSubmit = (data) => {
     addTask(data);
     setIsModalVisible(false);
-    setOpenToDo(true);
-
+    toast.success("Sucesso!", {
+      icon: '👏',
+    });
+    //console.table(data)
   };
 
   return (
@@ -56,7 +57,7 @@ const Form = () => {
           register={register('description')}
           placeholder="Digite a descrição"
           label="Descrição"
-          className={`border border-gray-200 resize-none rounded w-full text-sm ${!!errors.title && isSubmit == true ?" border-red-400 ": "focus:border-neutral-400 focus:outline-none"}`}
+          className={`border p-1.5  border-gray-200 resize-none rounded w-full text-sm ${!!errors.title && isSubmit == true ?" border-red-400 ": "focus:border-neutral-400 focus:outline-none"}`}
         />
         <div className="mb-6  flex flex-col   sm:gap-20 lg:gap-0 xl:gap-16 sm:flex-row gap-4">
           <span className="flex flex-col w-4/4 sm:w-2/4">

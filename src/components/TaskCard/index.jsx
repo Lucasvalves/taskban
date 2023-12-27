@@ -1,12 +1,12 @@
 import { MdOutlineWatchLater } from 'react-icons/md';
-import { handlePriorityColor } from '../../utils/functions';
+import { handlePriorityColor } from '../../utils/constants';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 export const TaskCard = ({ task, index, taskEntries }) => {
   const priorityClassName = handlePriorityColor(task.priority);
 
   const textColor =
-    new Date(task.date) < new Date() ? 'text-red-400' : 'text-stone-500 ';
+    new Date(task.date) <= new Date() ? 'text-red-400' : 'text-stone-500 ';
 
   return (
     //<Draggable key={task.id} draggableId={task.id} index={index}>
