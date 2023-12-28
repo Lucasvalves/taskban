@@ -14,8 +14,8 @@
   }
 
   *::-webkit-scrollbar {
-    width: 7px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
     transition: 0.3s;
   }
 
@@ -29,17 +29,5 @@
     background: #C4C4C4;
     border-radius: 10px;
   }
-
-  .height {
-    height: calc(100% - 80px);
-  }
-
-  /* textarea:focus,
-  input:focus,
-  select:focus {
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
-  } */
 
 }

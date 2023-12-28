@@ -13,7 +13,7 @@ function App() {
         <ModalProvider>
           <SidebarContext>
             <NavBar />
-            <div className="bg-violet-50 h-screen w-screem flex  ">
+            <div className="bg-violet-50 h-screen w-screem flex">
               <div className="w-full flex flex-row h-screen ">
                 <SideBar />
                 <TaskContainer />
@@ -28,3 +28,4 @@ function App() {
 }
 
 export default App;
+//overflow-hidden

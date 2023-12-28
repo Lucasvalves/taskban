@@ -12,47 +12,42 @@ export const TaskCard = ({ task, index, taskEntries }) => {
   return (
     <Draggable key={task.id} draggableId={task.id} index={index}>
       {(provided) => (    
-      <div className=" h-1/6 bg-white  rounded-lg drop-shadow-md w-full"
+      <div className="  bg-white  min-h-[155px] w-full rounded-xl p-3 shadow sm:p-5 text-stone-500 "
         ref={provided.innerRef}
         {...provided.draggableProps}
         {...provided.dragHandleProps}    
       >
-        <h1 className="text-stone-500 font-semibold text-base mb-3 ml-4 mt-4  ">
+        <h1 className="break-words font-semibold sm:text-xl ">
           {task.title}
         </h1>
-        <p className="text-stone-500 text-xs m-4 h-fit text-justify font-medium">
+        <p className=" text-sm break-words mt-4  font-medium sm:text-ss">
           {task.description}
         </p>
+        <div className=" flex w-full items-center text-[12px] sm:text-sm ">
+          {taskEntries === 'Done' ? (
+            <>
+              <CheckCircleOutlineIcon className=" w-4 text-green-400 bg-orange-300 sm:w-6" />                          
+              <span className='text-green-400  text-base bg-black-200 ml-2.5 font-semibold'>Finalizado  </span>  
+            </>        
+          ) : (
+            <>
+                <span
+                  className={`${textColor} flex flex-row text-[0.70rem] font-semibold whitespace-nowrap items-center text-xs`}              
+                >
+                <MdOutlineWatchLater className="h-fit w-6"  />
 
-        {taskEntries === 'Done' ? (
-          <div className=" flex gap-2 mx-4 mb-4 justify-start items-center">
-            <CheckCircleOutlineIcon className="h-fit w-6 text-green-400" />
-
-            <span className="text-green-400   text-sm ">
-              Finalizado
-            </span>
-          </div>
-        ) : (
-          <div className=" w mx-4 mb-4 flex flex-row">
-            <span className="w-2/4 text-stone-500  ">
-              <span
-                className={`${textColor} flex flex-row text-[0.70rem] ml-1 font-semibold whitespace-nowrap items-center gap-2 text-xs`}
-                
-              >
-              <MdOutlineWatchLater className="h-fit w-6 " />
-
-                {new Date(task.date).toLocaleDateString('pt-BR')}
+                  {new Date(task.date).toLocaleDateString('pt-BR')}
+                </span>
+              <span className="h-6 flex justify-end items-center bg-gray-200 ml-2">
+                <span
+                  className={`${priorityClassName}  uppercase px-3 rounded-xl text-sm  `}
+                >
+                  {task.priority}
+                </span>
               </span>
-            </span>
-            <span className="w-2/4 h-6 flex justify-end items-center">
-              <span
-                className={`${priorityClassName}  uppercase px-3 rounded-xl text-sm  `}
-              >
-                {task.priority}
-              </span>
-            </span>
-          </div>
+            </>
         )}
+          </div>
       </div>
        )}
       </Draggable>

@@ -8,7 +8,7 @@ const TextField = ({ label, register, placeholder, icon,error, className,onChang
 
   return (
     <div className="flex flex-col">
-      <label className="relative top-1.5 left-1.5 pointer-events-none text-gray-200 bg-white text-xs z-40 whitespace-nowrap  w-fit flex flex-col ">
+      <label className="relative top-1.5 left-1.5 pointer-events-none text-stone-500 bg-white text-xs z-40 whitespace-nowrap  w-fit flex flex-col ">
         {label}
       </label>
       <div className="relative flex items-center ">

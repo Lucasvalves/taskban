@@ -23,10 +23,9 @@ export const TaskContainer = () => {
   return (
 
       <div
-        className="6  h-full flex w-full justify-center overflow-y-scroll "
+        className="flex h-full flex-1 gap-x-9 gap-y-4 overflow-auto px-3 pb-9 pt-7 sm:gap-x-10 sm:pt-[121px] md:px-8 xl:px-[84px] drop-shadow-md"
       >
         <DragDropContext onDragEnd={onDragEnd}>
-          <div className="flex  justify-center gap-">
             {tasks &&
               taskEntries.map(([key, value], index) => (
                 <Droppable key={key} droppableId={key}>
@@ -35,26 +34,21 @@ export const TaskContainer = () => {
                     {...provided.droppableProps}
                     ref={provided.innerRef}
                   >
-                {/* {console.log("Key: ",key,"Value: " ,value, "Index: ", index)} */}
-                
-                    <TaskList key={key} title={`${value} (${tasks[key].length})`}>
-                      {
-                        // tasks[key].length > 0 ? (
-                        tasks[key].map((task, index) => (
-                          <TaskCard key={task.id} task={task} index={index} taskEntries={value} />
-                        ))
-                        // ) : (
-                        //   <p>Sem tarefas</p>
-                        // )
-                      }
-                    </TaskList>
-                    {provided.placeholder} 
+                    <section className="mt-2 space-y-4 sm:mt-9">
+                      <TaskList key={key} title={`${value} (${tasks[key].length})`}>
+                        {
+                          tasks[key].map((task, index) => (
+                            <TaskCard key={task.id} task={task} index={index} taskEntries={value} />
+                          ))
+                        }
+                      </TaskList>
+                      {provided.placeholder} 
+                    </section>
                   </div>
                   
                   )}
                   </Droppable>                
               ))}
-          </div>
         </DragDropContext>
       </div>
   );

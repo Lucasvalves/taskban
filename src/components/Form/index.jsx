@@ -48,7 +48,7 @@ const Form = () => {
             error={!!errors.title}
             register={register('title')}
             label="Título da Task"
-            className={`border border-gray-20 rounded  text-sm p-1.5 w-full ${!!errors.title && isSubmit == true ? " border-red-400 " : "focus:border-neutral-400 focus:outline-none focus:ring-[#C4C4C4]"} `}
+            className={`border border-gray-20 rounded font-medium text-xs  2xl:text-sm p-1.5 w-full ${!!errors.title && isSubmit == true ? " border-red-400 " : "focus:border-neutral-400 focus:outline-none focus:ring-[#C4C4C4]"} `}
             placeholder="Digite aqui o título da task"
           />
         </div>
@@ -57,9 +57,9 @@ const Form = () => {
           register={register('description')}
           placeholder="Digite a descrição"
           label="Descrição"
-          className={`border p-1.5  border-gray-200 resize-none rounded w-full text-sm ${!!errors.title && isSubmit == true ?" border-red-400 ": "focus:border-neutral-400 focus:outline-none"}`}
+          className={`border p-1.5  border-gray-200 resize-none rounded font-medium w-full text-xs  2xl:text-sm ${!!errors.title && isSubmit == true ?" border-red-400 ": "focus:border-neutral-400 focus:outline-none"}`}
         />
-        <div className="mb-6  flex flex-col   sm:gap-20 lg:gap-0 xl:gap-16 sm:flex-row gap-4">
+        <div className="mb-6 flex flex-col sm:gap-10 lg:gap-6 xl:gap-12' sm:flex-row gap-4">
           <span className="flex flex-col w-4/4 sm:w-2/4">
             <TextField
 
@@ -69,30 +69,30 @@ const Form = () => {
               label="Data final"
               placeholder="Selecione a data de entrega"
               icon={<PickData />}
-              className={`border border-gray-200 rounded text-sm p-1.5  w-full box-border cursor-pointer ${!!errors.title && isSubmit == true ? " border-red-400 ":"focus:border-neutral-400 focus:outline-none focus:ring-[#C4C4C4]"}`}
+              className={`border border-gray-200 rounded font-medium text-xs  2xl:text-sm p-1.5  w-full box-border cursor-pointer ${!!errors.title && isSubmit == true ? " border-red-400 ":"focus:border-neutral-400 focus:outline-none focus:ring-[#C4C4C4]"}`}
 						
             />
           </span>
           <span className="w-4/4 sm:w-2/4  ">
-            <span className="flex flex-col   w-full gap-0.5 ">
-              <label className="text-xs text-gray-200  2xl:w-3/6  2xl:ml-2">
+            <span className="flex flex-col  w-full gap-0.5">
+              <label className="text-xs text-gray-200 2xl:w-3/6 sm:mt-1.5 2xl:ml-2 ">
                 Priority
               </label>
-              <div className="flex gap-2 sm:gap-3  md:flex-row  sm:justify-end  ">
+              <div className="flex gap-2 sm:gap-3 lg:gap-1 xl:gap-3 md:flex-row  sm:justify-end ">
                 <InputRadio
                   register={register('priority')}
                   value="high"
-                  className=" bg-red-400 uppercase text-white text-xs p-0.5 px-3 sm:px-5 rounded-xl cursor-pointer"
+                  className=" bg-red-400 uppercase text-white text-xs p-0.5 px-3 sm:px-4 lg:px-3 xl:px-4 rounded-xl cursor-pointer"
                 />
                 <InputRadio
                   register={register('priority')}
                   value="medium"
-                  className="border uppercase border-orange-100  text-orange-100 bg-white text-xs p-0.5 px-3 sm:px-6 rounded-xl cursor-pointer"
+                  className="border uppercase border-orange-100  text-orange-100 bg-white text-xs p-0.5 px-3 lg:px-2 xl:px-4 rounded-xl cursor-pointer"
                 />
                 <InputRadio
                   register={register('priority')}
                   value="low"
-                  className="border uppercase border-green-400 text-green-400 bg-white text-xs p-0.5 px-3 lg:px-3 sm:px-5 rounded-xl cursor-pointer"
+                  className="border uppercase border-green-400 text-green-400 bg-white text-xs p-0.5 px-3 lg:px-2 sm:px-3 rounded-xl cursor-pointer"
                 />
               </div>
               {!!errors.priority && (
