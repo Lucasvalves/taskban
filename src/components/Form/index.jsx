@@ -82,7 +82,7 @@ const Form = () => {
                 <InputRadio
                   register={register('priority')}
                   value="high"
-                  className=" bg-red-400 uppercase text-white text-xs p-0.5 px-3 sm:px-4 lg:px-3 xl:px-4 rounded-xl cursor-pointer"
+                  className=" bg-red-400 uppercase  text-white text-xs p-0.5 px-3 sm:px-4 lg:px-3 xl:px-4 rounded-xl cursor-pointer focus:outline-none focus:border-neutral-400"
                 />
                 <InputRadio
                   register={register('priority')}

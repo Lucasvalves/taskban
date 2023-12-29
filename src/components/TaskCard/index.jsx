@@ -20,32 +20,32 @@ export const TaskCard = ({ task, index, taskEntries }) => {
         <h1 className="break-words font-semibold sm:text-xl ">
           {task.title}
         </h1>
-        <p className=" text-sm break-words mt-4  font-medium sm:text-ss">
+        <p className=" text-sm break-words mt-4  font-medium sm:text-sm">
           {task.description}
         </p>
-        <div className=" flex w-full items-center text-[12px] sm:text-sm ">
+        <div className=" flex w-full items-center text-[12px] sm:text-sm  mt-4">
           {taskEntries === 'Done' ? (
             <>
-              <CheckCircleOutlineIcon className=" w-4 text-green-400 bg-orange-300 sm:w-6" />                          
-              <span className='text-green-400  text-base bg-black-200 ml-2.5 font-semibold'>Finalizado  </span>  
+              <CheckCircleOutlineIcon className=" w-4 text-green-400  sm:w-6" />                          
+              <span className='text-green-400  text-base ml-2.5 font-semibold'>Finalizado  </span>  
             </>        
           ) : (
-            <>
+              <>
                 <span
-                  className={`${textColor} flex flex-row text-[0.70rem] font-semibold whitespace-nowrap items-center text-xs`}              
+                  className={`${textColor} flex flex-row text-[0.70rem] font-semibold  items-center text-xs w-2/4`}              
                 >
-                <MdOutlineWatchLater className="h-fit w-6"  />
+                  <MdOutlineWatchLater className="h-fit w-6 mr-2"  />
 
                   {new Date(task.date).toLocaleDateString('pt-BR')}
                 </span>
-              <span className="h-6 flex justify-end items-center bg-gray-200 ml-2">
-                <span
-                  className={`${priorityClassName}  uppercase px-3 rounded-xl text-sm  `}
-                >
-                  {task.priority}
+                <span className="h-6 flex justify-end items-center ml-2 w-2/4">
+                  <span
+                    className={`${priorityClassName}  uppercase px-3 rounded-xl text-sm  `}
+                  >
+                    {task.priority}
+                  </span>
                 </span>
-              </span>
-            </>
+              </>
         )}
           </div>
       </div>

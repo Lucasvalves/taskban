@@ -13,7 +13,7 @@ export const InputRadio = ({
         value={value}
         checked={selectedOption === value}
         onChange={onChange}
-        className="hidden"
+        className="hidden "
         {...register}
       />
 

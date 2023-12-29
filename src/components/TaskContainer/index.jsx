@@ -23,7 +23,7 @@ export const TaskContainer = () => {
   return (
 
       <div
-        className="flex h-full flex-1 gap-x-9 gap-y-4 overflow-auto px-3 pb-9 pt-7 sm:gap-x-10 sm:pt-[121px] md:px-8 xl:px-[84px] drop-shadow-md"
+        className="flex h-full flex-1 gap-x-9 gap-y-4 overflow-auto px-3 pb-9 pt-7 sm:gap-x-10 sm:pt-[121px] md:px-8 xl:px-[84px] drop-shadow-md "
       >
         <DragDropContext onDragEnd={onDragEnd}>
             {tasks &&
