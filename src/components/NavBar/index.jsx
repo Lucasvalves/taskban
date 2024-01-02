@@ -7,7 +7,7 @@ export const NavBar = () => {
   return (
     <nav className="h-20 w-full bg-purple-950 flex justify-end items-center fixed self-end z-50">
       <Button
-        className="bg-violet-150 text-violet-50 rounded h-10 w-30 m-8 sm:m-20  text-xs sm:text-sm px-2 sm:px-4  "
+        className="bg-violet-150 flex felx-row items-center text-violet-50 font-semibold rounded h-10 w-30 m-8 sm:m-20  text-xs sm:text-sm px-2 sm:px-4  "
         onClick={() => setIsModalVisible(true)}
         text=" + Novo Card"
       />
