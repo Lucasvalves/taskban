@@ -1,7 +1,7 @@
 import { MdOutlineWatchLater } from 'react-icons/md';
 import { handlePriorityColor } from '../../utils/constants';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import { Draggable } from "react-beautiful-dnd";
+import { Draggable } from "@hello-pangea/dnd";
 
 export const TaskCard = ({ task, index, taskEntries }) => {
   const priorityClassName = handlePriorityColor(task.priority);
@@ -23,10 +23,10 @@ export const TaskCard = ({ task, index, taskEntries }) => {
         <p className=" text-sm break-words mt-4  font-medium sm:text-sm">
           {task.description}
         </p>
-        <div className=" flex w-full items-center text-[12px] sm:text-sm  mt-4">
+        <div className="flex w-full items-center text-[12px] sm:text-sm  mt-4">
           {taskEntries === 'Done' ? (
             <>
-              <CheckCircleOutlineIcon className=" w-4 text-green-400  sm:w-6" />                          
+              <CheckCircleOutlineIcon className="w-4 text-green-400  sm:w-6" />                          
               <span className='text-green-400  text-base ml-2.5 font-semibold'>Finalizado  </span>  
             </>        
           ) : (
@@ -35,7 +35,6 @@ export const TaskCard = ({ task, index, taskEntries }) => {
                   className={`${textColor} flex flex-row text-[0.70rem] font-semibold  items-center text-xs w-2/4`}              
                 >
                   <MdOutlineWatchLater className="h-fit w-6 mr-2"  />
-
                   {new Date(task.date).toLocaleDateString('pt-BR')}
                 </span>
                 <span className="h-6 flex justify-end items-center ml-2 w-2/4">
@@ -46,9 +45,9 @@ export const TaskCard = ({ task, index, taskEntries }) => {
                   </span>
                 </span>
               </>
-        )}
+          )}
           </div>
-      </div>
+        </div>
        )}
       </Draggable>
   );

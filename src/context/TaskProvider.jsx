@@ -1,4 +1,3 @@
-import { createContext } from 'react';
 import { emptyTasks, initialTaksValues } from '../utils/constants';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -16,6 +15,7 @@ export default function TaskProvider({ children }) {
       localStorage.setItem('tasks', JSON.stringify(initialTaksValues));
       setTasks(initialTaksValues);
     }
+    console.log("Storage", storage);
   }, []);
 
   return (

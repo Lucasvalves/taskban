@@ -34,10 +34,7 @@ const Form = () => {
   const onSubmit = (data) => {
     addTask(data);
     setIsModalVisible(false);
-    toast.success("Sucesso!", {
-      icon: '👏',
-    });
-    //console.table(data)
+    toast.success("Formulário Preenchido!")
   };
 
   return (
@@ -57,12 +54,11 @@ const Form = () => {
           register={register('description')}
           placeholder="Digite a descrição"
           label="Descrição"
-          className={`border p-1.5  border-gray-200 resize-none rounded font-medium w-full text-xs  2xl:text-sm ${!!errors.title && isSubmit == true ?" border-red-400 ": "focus:border-neutral-400 focus:outline-none"}`}
+          className={`border p-1.5 mb-3 border-gray-200 resize-none rounded font-medium w-full text-xs  2xl:text-sm ${!!errors.title && isSubmit == true ?" border-red-400 ": "focus:border-neutral-400 focus:outline-none"}`}
         />
-        <div className="mb-6 flex flex-col sm:gap-10 lg:gap-6 xl:gap-12' sm:flex-row gap-4">
+        <div className="mb-6 flex flex-col sm:gap-10 lg:gap-10 xl:gap-12' sm:flex-row gap-4">
           <span className="flex flex-col w-4/4 sm:w-2/4">
             <TextField
-
               error={!!errors.date}
               register={register('date')}
               type="date"
@@ -73,26 +69,26 @@ const Form = () => {
 						
             />
           </span>
-          <span className="w-4/4 sm:w-2/4  ">
-            <span className="flex flex-col  w-full gap-0.5">
-              <label className="text-xs text-gray-200 2xl:w-3/6 sm:mt-1.5 2xl:ml-2 ">
+          <span className="w-4/4 sm:w-2/4 ">
+            <span className="flex flex-col  w-full gap-0.5 ">
+              <label className="text-xs text-gray-200 sm:mt-1 2xl:ml-4 ">
                 Priority
               </label>
-              <div className="flex gap-2 sm:gap-3 lg:gap-1 xl:gap-3 md:flex-row  sm:justify-end ">
+              <div className="flex gap-2 sm:gap-3 lg:gap-1 xl:gap-4  md:flex-row  sm:justify-end ">
                 <InputRadio
                   register={register('priority')}
                   value="high"
-                  className=" bg-red-400 uppercase  text-white text-xs p-0.5 px-3 sm:px-4 lg:px-3 xl:px-4 rounded-xl cursor-pointer focus:outline-none focus:border-neutral-400"
+                  className=" bg-red-400 uppercase duration-75 hover:bg-red-350  text-white text-xs p-0.5 px-3 pt-1 sm:px-4 lg:px-3 xl:px-4 rounded-xl cursor-pointer focus:outline-none focus:border-neutral-400"
                 />
                 <InputRadio
                   register={register('priority')}
                   value="medium"
-                  className="border uppercase border-orange-100  text-orange-100 bg-white text-xs p-0.5 px-3 lg:px-2 xl:px-4 rounded-xl cursor-pointer"
+                  className="border uppercase duration-75 border-orange-100 hover:bg-orange-50  text-orange-100 bg-white text-xs p-0.5 px-3 pt-1 lg:px-2 xl:px-4 rounded-xl cursor-pointer"
                 />
                 <InputRadio
                   register={register('priority')}
                   value="low"
-                  className="border uppercase border-green-400 text-green-400 bg-white text-xs p-0.5 px-3 lg:px-2 sm:px-3 rounded-xl cursor-pointer"
+                  className="border uppercase duration-75 border-green-400 hover:bg-green-350 text-green-400  bg-white text-xs p-0.5 px-3 pt-1 lg:px-2 xl:px-4 sm:px-3 rounded-xl cursor-pointer"
                 />
               </div>
               {!!errors.priority && (
@@ -106,14 +102,15 @@ const Form = () => {
       </div>
       <div className=" w-full h-1/6 flex justify-center sm:justify-end gap-4">
         <Button
+          type="button"
           text="CANCELAR"
           onClick={() => setIsModalVisible(false)}
-          className="text-red-400 border  border-red-400 text-xs w-2/5 sm:w-1/4 p-1"
+          className="text-red-400 border duration-75 border-red-400 text-xs w-2/5 sm:w-1/4 p-1 hover:bg-red-300"
         />
         <Button
           type="submit"
           text="CRIAR"
-          className="bg-purple-950 text-white border text-xs w-2/5 sm:w-1/4 p-1"
+          className="bg-purple-950 duration-75 text-white border text-xs w-2/5 sm:w-1/4 p-1 hover:bg-purple-900"
           onClick={()=> setIsSubmit(true)}
         />
       </div>

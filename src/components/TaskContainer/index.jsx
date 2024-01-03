@@ -3,21 +3,27 @@ import { useContext } from 'react';
 import { TaskList } from '../TaskList';
 import { TasksContext } from '../../context/TasksContext';
 import {cardsTitle} from '../../utils/constants'
-import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable } from "@hello-pangea/dnd";
+import { useTasks } from '../../hook/useTasks';
 
 export const TaskContainer = () => {
-  const { tasks, setTasks } = useContext(TasksContext);
+  const { tasks} = useContext(TasksContext);
   const taskEntries = Array.from(Object.entries(cardsTitle));
+  const { replacePosition, replaceList} = useTasks()
 
-  const onDragEnd = (re) => {
-    if (!re.destination) return;
-    let newBoardData = tasks;
-   console.table(newBoardData)
-    var dragItem =
-      newBoardData[parseInt(re.source.droppableId)].items[re.source.index];
-      newBoardData[parseInt(re.source.droppableId)].items.splice(re.source.index,1);
-      newBoardData[parseInt(re.destination.droppableId)].items.splice(re.destination.index,0,dragItem);
-      setTasks(newBoardData.todo);
+  const onDragEnd = ({destination, source}) => {
+    if (!destination) return;
+    const  task = tasks[source.droppableId ][source.index]
+    
+    if (destination.droppableId === source.droppableId &&
+        destination.index !== source.index ) {
+      replacePosition(task, source.droppableId, destination.index)
+      return
+    }
+    if (destination.droppableId !== source.droppableId) {
+      replaceList(task, destination.index, source.droppableId, destination.droppableId)
+      return
+    }   
   };
 
   return (
@@ -31,18 +37,19 @@ export const TaskContainer = () => {
                 <Droppable key={key} droppableId={key}>
                 {(provided, snapshot) => (
                   <div
-                    {...provided.droppableProps}
-                    ref={provided.innerRef}
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
                   >
                     <section className="mt-2 space-y-4 sm:mt-9">
-                      <TaskList key={key} title={`${value} (${tasks[key].length})`}>
+                      <TaskList key={key} title={`${value} (${tasks[key].length})`} length={tasks[key].length}
+                      >
                         {
-                          tasks[key].map((task, index) => (
-                            <TaskCard key={task.id} task={task} index={index} taskEntries={value} />
-                          ))
+                          tasks[key].map((task, index) => (                           
+                            task && <TaskCard key={task.id} task={task} index={index} taskEntries={value} />
+                         ))
                         }
-                      </TaskList>
                       {provided.placeholder} 
+                      </TaskList>
                     </section>
                   </div>
                   

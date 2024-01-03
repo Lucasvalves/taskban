@@ -22,7 +22,7 @@ export const SideBar = () => {
           <ListSideBar />
         </div>
           <button onClick={() => setExpanded(curr => !curr)} className="absolute  top-2/4 right-[-14px] 
-            translate-y-2/4  p-1.5 rounded-full border-2  bg-purple-950 text-white">
+            translate-y-2/4  p-1.5 rounded-full border-2  bg-purple-950 hover:bg-purple-900 duration-75 text-white">
             {expanded ? <CgPushChevronLeft size={15} /> : <CgPushChevronRight size={15}/>  }
           </button>          
       </nav>
