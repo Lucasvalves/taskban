@@ -50,8 +50,8 @@ export const cardsTitle = {
   done: 'Done',
 };
 
-export const handlePriorityColor = (typePriority) => {
-  switch (typePriority) {
+export const handlePriorityColor = (priorityType) => {
+  switch (priorityType) {
     case 'high':
       return 'bg-red-400 text-white';
     case 'medium':

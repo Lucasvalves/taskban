@@ -1,5 +1,6 @@
 import useModalContext from '../../hook/useModalContext'
 import Form from '../Form'
+
 export const Modal = () => {
   const { isModalVisible , setIsModalVisible  } = useModalContext()
 

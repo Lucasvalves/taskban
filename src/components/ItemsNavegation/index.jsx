@@ -25,7 +25,6 @@ export const ItemsNavegation = ({text, active, alert }) => {
           }`}
         />
       )}
-
       {!expanded && (
         <div
           className={`

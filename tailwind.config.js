@@ -14,6 +14,7 @@ export default {
     colors: {
       white: '#ffffff',
       black: {
+        100: 'rgba(0, 0, 0, 0.3)',
         200: 'rgba(0, 0, 0, 0.8)',
       },
       gray: {
@@ -44,6 +45,7 @@ export default {
       orange: {
         50: '#FFBA8006',
         100: '#FFBA80',
+        300: '#f97316',
       },
       green: {
         350: '#2BA70006',

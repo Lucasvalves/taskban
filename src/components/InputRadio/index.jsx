@@ -16,7 +16,6 @@ export const InputRadio = ({
         className="hidden "
         {...register}
       />
-
       {value.toUpperCase()}
     </label>
   );

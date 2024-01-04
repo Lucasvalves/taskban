@@ -6,14 +6,17 @@ import {cardsTitle} from '../../utils/constants'
 import { DragDropContext, Droppable } from "@hello-pangea/dnd";
 import { useTasks } from '../../hook/useTasks';
 
+
 export const TaskContainer = () => {
   const { tasks} = useContext(TasksContext);
   const taskEntries = Array.from(Object.entries(cardsTitle));
   const { replacePosition, replaceList} = useTasks()
 
+
   const onDragEnd = ({destination, source}) => {
     if (!destination) return;
-    const  task = tasks[source.droppableId ][source.index]
+
+    const task = tasks[source.droppableId][source.index]
     
     if (destination.droppableId === source.droppableId &&
         destination.index !== source.index ) {
@@ -41,16 +44,17 @@ export const TaskContainer = () => {
                   ref={provided.innerRef}
                   >
                     <section className="mt-2 space-y-4 sm:mt-9">
-                      <TaskList key={key} title={`${value} (${tasks[key].length})`} length={tasks[key].length}
+                      <TaskList  key={key} title={`${value} (${tasks[key].length})`} length={tasks[key].length}
                       >
-                        {
+                        {                            
                           tasks[key].map((task, index) => (                           
-                            task && <TaskCard key={task.id} task={task} index={index} taskEntries={value} />
+                            task &&
+                                  <TaskCard key={task.id} task={task} index={index} taskEntries={value} indexTaskEntries={key}/>                                                                      
                          ))
-                        }
-                      {provided.placeholder} 
+                        }  
                       </TaskList>
                     </section>
+                    {provided.placeholder} 
                   </div>
                   
                   )}
@@ -60,4 +64,3 @@ export const TaskContainer = () => {
       </div>
   );
 };
-   
