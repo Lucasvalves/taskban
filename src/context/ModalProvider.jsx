@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { ModalContext } from './ModalContext';
 export default function AppProvider({ children }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalEditVisible , setIsModalEditVisible] = useState(false);
   const [isPoupUpVisible, setIsPoupUpVisible] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false)
   const [expanded, setExpanded] = useState(true)
-  const [confirmedDeletion, setConfirmedDeletion] = useState(false);
+  const [idEdit, setIdEdit] = useState("")
 
 
   return (
@@ -13,14 +14,16 @@ export default function AppProvider({ children }) {
       value={{
         isModalVisible,
         setIsModalVisible,
+        isModalEditVisible, 
+        setIsModalEditVisible,
         isPoupUpVisible, 
         setIsPoupUpVisible,
         isSubmit, 
         setIsSubmit,
         expanded, 
         setExpanded,
-        confirmedDeletion, 
-        setConfirmedDeletion
+        idEdit, 
+        setIdEdit,
       }}
     >
       {children}

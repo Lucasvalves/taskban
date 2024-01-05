@@ -19,11 +19,46 @@ export function useTasks() {
     setTasks(newTasks);
     //console.log(todo);
   };
+  function editTask(taskEdit, idEdit){
+    console.log(taskEntries);
+
+    const { todo, doing, qa, done } = tasks;
+
+    let newTaskEditedTodo = {}
+
+    todo.map((task)=>{
+      if(task.id === idEdit){
+        const {id, title, description, date, priority} = task
+          newTaskEditedTodo = {  
+            id,
+            title: taskEdit.title,
+            description: taskEdit.description,
+            date: taskEdit.date,
+            priority: taskEdit.priority
+        }  
+      }
+    })
+    const oldsTodo = todo.map((oldTasks) => oldTasks).filter(oldTasks => oldTasks.id !== idEdit)
+    oldsTodo.unshift(newTaskEditedTodo);
+
+    let newTasksTodo = {
+      ...tasks,
+      todo: oldsTodo,
+    };
+    setTasks(newTasksTodo);
+    localStorage.setItem('tasks', JSON.stringify(newTasksTodo)),
+    console.log("newTasks: ", newTasksTodo);
+    
+
+ 
+
+
+  }
   const removeTask = (idCard, nameTask)=>{
+    const { todo, doing, qa, done } = tasks;
     
     switch (nameTask) {
       case "todo":
-        const { todo } = tasks;
         const resultTodo = todo.map((task) => task).filter(task => task.id !== idCard)
         const newListTodo = {
           ...tasks,
@@ -31,16 +66,13 @@ export function useTasks() {
         };
         return localStorage.setItem('tasks', JSON.stringify(newListTodo)), setTasks(newListTodo)
       case "doing":
-        const { doing } = tasks;
         const resultDoing = doing.map((task) => task).filter(task => task.id !== idCard)
-
         const newListDoing = {
           ...tasks,
           doing: resultDoing,
         };
         return localStorage.setItem('tasks', JSON.stringify(newListDoing)), setTasks(newListDoing) 
       case "qa":
-        const { qa } = tasks;
         const resultQa = qa.map((task) => task).filter(task => task.id !== idCard)
 
         const newListQa = {
@@ -49,7 +81,6 @@ export function useTasks() {
         };
         return localStorage.setItem('tasks', JSON.stringify(newListQa)), setTasks(newListQa)
       case "done":
-        const { done } = tasks;
         const resultDone = done.map((task) => task).filter(task => task.id !== idCard)
 
         const newListDone = {
@@ -89,5 +120,5 @@ export function useTasks() {
     }
   }
 
-  return { addTask, removeTask, replacePosition, replaceList };
+  return { addTask, editTask, removeTask, replacePosition, replaceList };
 }

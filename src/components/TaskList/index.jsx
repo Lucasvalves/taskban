@@ -2,7 +2,7 @@ export const TaskList = ({ title, children, length }) => {
 
   return (
     length ? (
-      <div
+      <div       
         className="bg-violet-100   h-fit min-h-[243px] w-full max-w-[300px] flex-1 shrink-0 basis-full 
         rounded-3xl  px-2 py-[2px] shadow-card sm:min-w-[330px] sm:max-w-[330px]"
       >

@@ -44,7 +44,7 @@ export const TaskContainer = () => {
                   ref={provided.innerRef}
                   >
                     <section className="mt-2 space-y-4 sm:mt-9">
-                      <TaskList  key={key} title={`${value} (${tasks[key].length})`} length={tasks[key].length}
+                      <TaskList   key={key} title={`${value} (${tasks[key].length})`} length={tasks[key].length}
                       >
                         {                            
                           tasks[key].map((task, index) => (                           

@@ -4,6 +4,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { Draggable } from "@hello-pangea/dnd";
 import { FaRegTrashCan as Delete} from "react-icons/fa6";
 import { FaRegEdit as  Edit} from "react-icons/fa";
+import { IoClose } from 'react-icons/io5';
 import useModalContext from '../../hook/useModalContext';
 import { useTasks } from '../../hook/useTasks';
 import toast from 'react-hot-toast';
@@ -13,7 +14,9 @@ import Swal from 'sweetalert2'
 
 export const TaskCard = ({ task, index, taskEntries, indexTaskEntries }) => {
 
-  const {setIsPoupUpVisible,isPoupUpVisible, confirmedDeletion} = useModalContext();
+  const { setIsModalEditVisible, setIdEdit } = useModalContext()
+
+
   const { removeTask } = useTasks();
 
 
@@ -22,7 +25,6 @@ export const TaskCard = ({ task, index, taskEntries, indexTaskEntries }) => {
   const textColor = new Date(task.date) <= new Date() ? 'text-red-400' : 'text-stone-500 ';
 
   const handleDeleteTask = () =>{
-    console.log(confirmedDeletion);
     Swal.fire({
       title: "Você tem certeza?",
       text: "Você não podera reverter isso!",
@@ -34,27 +36,39 @@ export const TaskCard = ({ task, index, taskEntries, indexTaskEntries }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         removeTask(task.id, indexTaskEntries)
-        console.log(indexTaskEntries);
-        toast.success("Task excluida!")
+        toast.success("Card excluido!")
       }
     });
   };
+  const handleEditTask = () =>{
+    setIsModalEditVisible(true)
+    setIdEdit(task.id)
+
+  }
   return (
-    <>
+
       <Draggable key={task.id} draggableId={task.id} index={index}>
         {(provided) => (    
-        <div className="  bg-white  min-h-[155px] w-full rounded-xl p-3 shadow sm:p-5 text-stone-500 "
-          ref={provided.innerRef}
+        <div className=" relative bg-white  min-h-[155px] w-full rounded-xl p-3 shadow sm:p-5 text-stone-500 "
           {...provided.draggableProps}
-          {...provided.dragHandleProps}    
+          {...provided.dragHandleProps}  
+          ref={provided.innerRef}
+
         >
           <span className='flex justify-between'>
             <h1 className="break-words font-semibold sm:text-xl ">
               {task.title}
             </h1>
             <span className=' flex items-center'>
-              <Edit className='text-orange-300 cursor-pointer' size={15} />
-              <Delete className='text-red-350 ml-1 cursor-pointer' size={15} onClick={handleDeleteTask}/> 
+              {taskEntries == 'To do' ? (
+                <>
+                  <Edit className='text-orange-300 cursor-pointer' size={15} onClick={handleEditTask}/>
+                  <Delete className='text-red-350 ml-1 cursor-pointer' size={15} onClick={handleDeleteTask}/>
+                </>
+                ):(
+                   <IoClose  className='absolute top-1 right-2 rounded border  border-red-350 flex w-5 text-red-350 ml-1 cursor-pointer' size={15} onClick={handleDeleteTask}/>                    
+                )
+              }
             </span>
           </span>
           <p className=" text-sm break-words mt-4  font-medium sm:text-sm">
@@ -87,8 +101,6 @@ export const TaskCard = ({ task, index, taskEntries, indexTaskEntries }) => {
           </div>
         )}
         </Draggable>
-
-      </>
   );
 };
 

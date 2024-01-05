@@ -1,6 +1,7 @@
 import { NavBar } from './components/NavBar';
 import { SideBar } from './components/SideBar';
 import { Modal } from './components/Modal';
+import { ModalEditTask } from './components/ModalEditTask';
 import ModalProvider from './context/ModalProvider';
 import TaskProvider from './context/TaskProvider';
 import SidebarContext from './context/SidebarProvider';
@@ -18,6 +19,7 @@ function App() {
                 <SideBar />
                 <TaskContainer />
                 <Modal />
+                <ModalEditTask/>
               </div>
             </div>
             <Toaster position='top-right'/>

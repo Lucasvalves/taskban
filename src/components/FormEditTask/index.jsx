@@ -18,9 +18,9 @@ const schema = z.object({
   date: z.coerce.date(),
 });
 
-const Form = () => {
-  const { addTask  } = useTasks();
-  const { setIsModalVisible, setIsSubmit, isSubmit } = useModalContext();
+const FormEditCard = () => {
+  const { editTask  } = useTasks();
+  const { setIsModalEditVisible,idEdit,} = useModalContext();
 
   const {
     register,
@@ -32,9 +32,10 @@ const Form = () => {
   });
 
   const onSubmit = (data) => {
-    addTask(data);
-    setIsModalVisible(false);
-    toast.success("Formulário Preenchido!")
+    editTask(data, idEdit);
+    setIsModalEditVisible(false);
+    toast.success("Task Atualizada!")
+
   };
 
   return (
@@ -104,7 +105,7 @@ const Form = () => {
         <Button
           type="button"
           text="CANCELAR"
-          onClick={() => setIsModalVisible(false)}
+          onClick={() => setIsModalEditVisible(false)}
           className="text-red-400 border duration-75 border-red-400 text-xs w-2/5 sm:w-1/4 p-1 hover:bg-red-300"
         />
         <Button
@@ -116,4 +117,4 @@ const Form = () => {
     </form>
   );
 };
-export default Form;
+export default FormEditCard;
