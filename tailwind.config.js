@@ -14,8 +14,7 @@ export default {
     colors: {
       white: '#ffffff',
       black: {
-        100: 'rgba(0, 0, 0, 0.3)',
-        200: 'rgba(0, 0, 0, 0.8)',
+        200: 'rgba(0, 0, 0, 0.3)',
       },
       gray: {
         200: '#C4C4C4',

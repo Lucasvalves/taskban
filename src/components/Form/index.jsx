@@ -45,7 +45,7 @@ const Form = () => {
             error={!!errors.title}
             register={register('title')}
             label="Título da Task"
-            className={`border border-gray-20 rounded font-medium text-xs  2xl:text-sm p-1.5 w-full ${!!errors.title && isSubmit == true ? " border-red-400 " : "focus:border-neutral-400 focus:outline-none focus:ring-[#C4C4C4]"} `}
+            className={`border border-gray-20 rounded font-medium text-xs  2xl:text-sm p-1.5 w-full ${!!errors.title && isSubmit == true ? " border-red-400" : "focus:border-neutral-400 focus:outline-none focus:ring-[#C4C4C4]"} `}
             placeholder="Digite aqui o título da task"
           />
         </div>
@@ -54,7 +54,7 @@ const Form = () => {
           register={register('description')}
           placeholder="Digite a descrição"
           label="Descrição"
-          className={`border p-1.5 mb-3 border-gray-200 resize-none rounded font-medium w-full text-xs  2xl:text-sm ${!!errors.title && isSubmit == true ?" border-red-400 ": "focus:border-neutral-400 focus:outline-none"}`}
+          className={`border p-1.5 mb-3 border-gray-200 resize-none rounded font-medium w-full text-xs  2xl:text-sm ${!!errors.title && isSubmit == true ?" border-red-400": "focus:border-neutral-400 focus:outline-none"}`}
         />
         <div className="mb-6 flex flex-col sm:gap-10 lg:gap-10 xl:gap-12' sm:flex-row gap-4">
           <span className="flex flex-col w-4/4 sm:w-2/4">
@@ -111,6 +111,8 @@ const Form = () => {
           type="submit"
           text="CRIAR"
           className="bg-purple-950 duration-75 text-white border text-xs w-2/5 sm:w-1/4 p-1 hover:bg-purple-900"
+          onClick={() =>setIsSubmit(true)}
+        
         />
       </div>
     </form>

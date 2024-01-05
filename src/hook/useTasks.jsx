@@ -20,8 +20,6 @@ export function useTasks() {
     //console.log(todo);
   };
   function editTask(taskEdit, idEdit){
-    console.log(taskEntries);
-
     const { todo, doing, qa, done } = tasks;
 
     let newTaskEditedTodo = {}
@@ -48,11 +46,6 @@ export function useTasks() {
     setTasks(newTasksTodo);
     localStorage.setItem('tasks', JSON.stringify(newTasksTodo)),
     console.log("newTasks: ", newTasksTodo);
-    
-
- 
-
-
   }
   const removeTask = (idCard, nameTask)=>{
     const { todo, doing, qa, done } = tasks;

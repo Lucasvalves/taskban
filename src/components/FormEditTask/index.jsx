@@ -20,7 +20,7 @@ const schema = z.object({
 
 const FormEditCard = () => {
   const { editTask  } = useTasks();
-  const { setIsModalEditVisible,idEdit,} = useModalContext();
+  const { setIsModalEditVisible,idEdit, isSubmit, setIsSubmit} = useModalContext();
 
   const {
     register,
@@ -66,7 +66,8 @@ const FormEditCard = () => {
               label="Data final"
               placeholder="Selecione a data de entrega"
               icon={<PickData />}
-              className={`border border-gray-200 rounded font-medium text-xs  2xl:text-sm p-1.5  w-full box-border cursor-pointer ${!!errors.title && isSubmit == true ? " border-red-400 ":"focus:border-neutral-400 focus:outline-none focus:ring-[#C4C4C4]"}`}
+              className={`border border-gray-200 rounded font-medium text-xs  2xl:text-sm p-1.5  w-full box-border cursor-pointer 
+              ${!!errors.title && isSubmit == true ? " border-red-400 ":"focus:border-neutral-400  focus:ring-[#C4C4C4]"}`}
 						
             />
           </span>
@@ -112,6 +113,8 @@ const FormEditCard = () => {
           type="submit"
           text="CRIAR"
           className="bg-purple-950 duration-75 text-white border text-xs w-2/5 sm:w-1/4 p-1 hover:bg-purple-900"
+          onClick={() =>setIsSubmit(true)}
+                
         />
       </div>
     </form>

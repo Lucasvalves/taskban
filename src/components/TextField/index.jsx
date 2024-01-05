@@ -22,7 +22,7 @@ const TextField = ({ label, register, placeholder, icon,error, className,onChang
           onChange={onChange}
         />
         {icon && (
-          <div className="absolute right-1.5 bottom-4 translate-y-2/4 ">
+          <div className="absolute right-1.5 bottom-4 translate-y-2/4">
             {icon}
           </div>
         )}
