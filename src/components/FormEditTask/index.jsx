@@ -21,6 +21,7 @@ const schema = z.object({
 const FormEditCard = () => {
   const { editTask  } = useTasks();
   const { setIsModalEditVisible,idEdit, isSubmit, setIsSubmit} = useModalContext();
+  const {title,description,date, id} = idEdit
 
   const {
     register,
@@ -46,6 +47,7 @@ const FormEditCard = () => {
             error={!!errors.title}
             register={register('title')}
             label="Título da Task"
+            defaultValue={title}
             className={`border border-gray-20 rounded font-medium text-xs  2xl:text-sm p-1.5 w-full ${!!errors.title && isSubmit == true ? " border-red-400 " : "focus:border-neutral-400 focus:outline-none focus:ring-[#C4C4C4]"} `}
             placeholder="Digite aqui o título da task"
           />
@@ -55,6 +57,7 @@ const FormEditCard = () => {
           register={register('description')}
           placeholder="Digite a descrição"
           label="Descrição"
+          defaultValue={description}
           className={`border p-1.5 mb-3 border-gray-200 resize-none rounded font-medium w-full text-xs  2xl:text-sm ${!!errors.title && isSubmit == true ?" border-red-400 ": "focus:border-neutral-400 focus:outline-none"}`}
         />
         <div className="mb-6 flex flex-col sm:gap-10 lg:gap-10 xl:gap-12' sm:flex-row gap-4">
@@ -65,6 +68,7 @@ const FormEditCard = () => {
               type="date"
               label="Data final"
               placeholder="Selecione a data de entrega"
+              defaultValue={new Date(date).toLocaleDateString('pt-BR')}
               icon={<PickData />}
               className={`border border-gray-200 rounded font-medium text-xs  2xl:text-sm p-1.5  w-full box-border cursor-pointer 
               ${!!errors.title && isSubmit == true ? " border-red-400 ":"focus:border-neutral-400  focus:ring-[#C4C4C4]"}`}

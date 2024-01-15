@@ -35,6 +35,7 @@ export const TaskContainer = () => {
         className="flex h-full flex-1 gap-x-9 gap-y-4 overflow-auto px-3 pb-9 pt-7 sm:gap-x-10 sm:pt-[121px] md:px-8 xl:px-[84px] drop-shadow-md "
       >
         <DragDropContext onDragEnd={onDragEnd}>
+        
             {tasks &&
               taskEntries.map(([key, value], index) => (
                 <Droppable key={key} droppableId={key}>

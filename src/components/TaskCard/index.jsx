@@ -42,7 +42,7 @@ export const TaskCard = ({ task, index, taskEntries, indexTaskEntries }) => {
   };
   const handleEditTask = () =>{
     setIsModalEditVisible(true)
-    setIdEdit(task.id)
+    setIdEdit(task)
 
   }
   return (

@@ -3,6 +3,7 @@ export const TextArea = ({
   label,
   placeholder,
   className,
+  defaultValue,
   ...restProps
 }) => {
   return (
@@ -15,6 +16,7 @@ export const TextArea = ({
         name="content"
         placeholder={placeholder}
         className={className}
+        defaultValue={defaultValue}
         {...register}
       />
     </>
